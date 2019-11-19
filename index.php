@@ -16,10 +16,12 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><?php echo L::mn_title;?></title>
+    <title>R3D MC | Giriş</title>
     <!-- Libraries -->
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image png" href="../images/logo.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="../ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" text="text/css" href="../css/my-login.css">
     <?php if (isset($_COOKIE['theme']) and is_file('resources/themes/'.$_COOKIE['theme'].'.css')) { $theme = $_COOKIE['theme']; }
     else { $theme = $config['def_theme']; }
     echo '<link id="stylesheetSelector" rel="stylesheet" name="'.$theme.'" href="resources/themes/'.$theme.'.css">'; 
@@ -51,20 +53,23 @@
       echo '<script src="'.cacheGrab($url, end($expl), './', false, ['sha512', $sha512]).'"></script>';
     } ?>
   </head>
-  <body class="bg-light">
+  <body class="my-login-page">
     <!-- Main Container -->
-    <section class="bg-light h-100">
+    <section class="h-100" >
       <div class="container h-100">
+	<div class="row justify-content-start">
+	<div class="col-4">
+	<a href="../index.php"><button type="button" name="back-to-page" class="btn btn-primary" style="margin-top:35px;"><i class="ion-chevron-left"></i>    Anasayfaya Dön</button></a>
+	</div>
+	</div>
         <div class="row h-100">
           <div class="col-lg-<?php echo(!empty($_SESSION['username']) ? 8 : 6); ?> m-auto">
             <div class="card border-0 shadow">
-              <div class="card-header bg-primary text-white">
+              <div class="card-header text-white" style="background-color:#ff0027">
                 <div class="row mx-2 align-items-center">
-                  <h5 class="mb-0"><?php echo L::ssys;?> 
-                    <?php
-                    echo '<small style="font-size: 60%;"><a id="versionDisplay" title="'.str_replace("%v%", $config['version'], L::mn_rlhov).'" href="https://github.com/riflowth/SkinSystem/releases/tag/'.$config['version'].'">v.'.$config['version'].'</a>';
-                      if($config['version'] !== getLatestVersion()){ echo ' <a title="'.L::mn_nwrel_hov.'" href="https://github.com/riflowth/SkinSystem/releases/latest">('.L::mn_nwrel.')</a>'; } ?>
-                    </small>
+			<div>
+				Bir hesabın yok mu ? <a href="../authme/register.php" style="color:#ffffff">Oluşturmak için tıkla!</a>
+			</div>
                   </h5>
                   <h6 class="mb-0 ml-auto">
                     <?php if($config['am']['enabled'] == true && !empty($_SESSION['username'])){ 
@@ -74,7 +79,6 @@
                       <a class="btn btn-sm btn-light ml-2 rounded-circle" title="<?php echo L::mn_lgout;?>" href="resources/server/authenCore.php?logout"><i class="fas fa-sign-out-alt"></i></a>
                     <?php } ?>
                   </h6>
-                  <a class="btn btn-sm btn-light ml-2 rounded-circle" title="<?php echo L::mn_swthm;?>" onclick="rotateTheme();"><i class="fas fa-adjust"></i></a>
                 </div>
               </div>
               <div class="card-body">
@@ -129,6 +133,7 @@
                               </div>
                             </div>
                             <button class="btn btn-primary w-100"><strong><?php echo L::upl_buttn;?></strong></button>
+			    
                             <small class="form-text text-muted" id="uploadDisclaimer"<?php 
                               if ($config['data_warn'] === 'no' or ($config['data_warn'] === 'eu' and file_get_contents(cacheGrab('https://ipapi.co/'.IP.'/in_eu', 'in_eu-'.IP)) !== 'True')) {
                                 echo ' style="display: none;"';
@@ -141,7 +146,7 @@
                     <!-- Skin Viewer -->
                     <div class="col-lg-4">
                       <div class="card border-0 shadow">
-                        <h6 class="card-header bg-info text-white"><i class="fas fa-eye text-dark"></i> Preview</h6>
+                        <h6 class="card-header bg-info text-white"><i class="fas fa-eye text-dark"></i> Önizleme</h6>
                         <div class="card-body">
                           <div id="skinViewerContainer"></div>
                           <script type="text/javascript">
@@ -196,7 +201,7 @@
                   <div class="row">
                     <div class="col-lg-12">
                       <div class="card border-0 shadow">
-                        <h6 class="card-header bg-info text-white"><i class="fas fa-sign-in-alt"></i> <?php echo L::auth_title;?></h6>
+                        <h6 class="card-header text-white" style="background-color:#ff0027"><i class="fas fa-sign-in-alt"></i> <?php echo L::auth_title;?></h6>
                         <div class="card-body">
                           <form id="loginForm">
                             <div class="input-group mb-3">
@@ -207,7 +212,7 @@
                               <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-lock"></i></span></div>
                               <input id="login-password" class="form-control" name="password" type="password" placeholder="<?php echo L::auth_psswd;?>" required>
                             </div>
-                            <button class="btn btn-success w-100"><?php echo L::auth_login;?></button>
+                            <button class="btn w-100" style="background-color:#94000c;color:white"><?php echo L::auth_login;?></button>
                           </form>
                         </div>
                       </div>

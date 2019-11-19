@@ -1,0 +1,6 @@
+[19-Nov-2019 12:24:43 UTC] PHP Warning:  Illegal string offset 'psp' in /home/spfs0hqf27kb/public_html/SkinSystem/resources/server/libraries.php on line 64
+[19-Nov-2019 12:24:43 UTC] PHP Warning:  Illegal string offset 'monitors' in /home/spfs0hqf27kb/public_html/SkinSystem/resources/server/libraries.php on line 64
+[19-Nov-2019 12:24:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/spfs0hqf27kb/public_html/SkinSystem/resources/server/libraries.php on line 64
+[19-Nov-2019 13:46:03 UTC] PHP Warning:  Illegal string offset 'psp' in /home/spfs0hqf27kb/public_html/SkinSystem/resources/server/libraries.php on line 64
+[19-Nov-2019 13:46:03 UTC] PHP Warning:  Illegal string offset 'monitors' in /home/spfs0hqf27kb/public_html/SkinSystem/resources/server/libraries.php on line 64
+[19-Nov-2019 13:46:03 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/spfs0hqf27kb/public_html/SkinSystem/resources/server/libraries.php on line 64
